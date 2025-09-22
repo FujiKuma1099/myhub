@@ -1,22 +1,19 @@
-import { Button, Card, Image, Text } from "@chakra-ui/react"
-import type { Game } from "./hooks/useGame"
+import { Button, Card, Image, Text } from "@chakra-ui/react";
+import type { Game } from "./hooks/useGame";
+import PlatformIconList from "./PlatformIconList";
 
 interface Props {
-    game: Game;
+  game: Game;
 }
 
-const GameCard = ({game}: Props) => {
+const GameCard = ({ game }: Props) => {
   return (
     <Card.Root maxW="sm" overflow="hidden">
-      <Image
-        src={game.background_image}
-        alt={game.name}
-      />
+      <Image src={game.background_image} alt={game.name} />
       <Card.Body gap="2">
-        <Card.Title>Living room Sofa</Card.Title>
+        <Card.Title>{game.name}</Card.Title>
         <Card.Description>
-          This sofa is perfect for modern tropical spaces, baroque inspired
-          spaces.
+          <PlatformIconList platforms={game.parent_platforms.map(p => p.platform)}></PlatformIconList>
         </Card.Description>
         <Text textStyle="2xl" fontWeight="medium" letterSpacing="tight" mt="2">
           $450
@@ -27,7 +24,7 @@ const GameCard = ({game}: Props) => {
         <Button variant="ghost">Add to cart</Button>
       </Card.Footer>
     </Card.Root>
-  )
-}
+  );
+};
 
-export default GameCard
+export default GameCard;
