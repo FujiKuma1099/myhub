@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import apiClient from "../api-client";
 import { CanceledError } from "axios";
-interface Game {
+export interface Game {
   id: number;
   name: string;
+  background_image: string;
 }
 
-interface FetchGamesResponse {
+export interface FetchGamesResponse {
   count: number;
   results: Game[];
 }
@@ -28,7 +29,7 @@ const useGames = () => {
       });
     return () => controller.abort();
   }, []);
-    return { games, error };
+  return { games, error };
 };
 
 export default useGames;
