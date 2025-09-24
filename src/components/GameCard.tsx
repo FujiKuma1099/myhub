@@ -3,6 +3,7 @@ import type { Game } from "./hooks/useGame";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCropImgUrl from "./services/img-url";
+import { Tooltip } from "@/components/ui/tooltip";
 
 interface Props {
   game: Game;
@@ -13,7 +14,7 @@ const GameCard = ({ game }: Props) => {
     <Card.Root>
       <Image src={getCropImgUrl(game.background_image)} alt={game.name} />
       <Card.Body gap="2">
-        <Card.Title>{game.name}</Card.Title>
+      <Tooltip content={game.name}><Card.Title lineClamp={1}>{game.name}</Card.Title></Tooltip>
         <HStack justifyContent="space-between">
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
