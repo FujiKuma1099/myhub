@@ -1,4 +1,4 @@
-import { HStack, Icon } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import type { Platform } from "./hooks/useGame";
 import type { IconType } from "react-icons";
 import { FaLaptopCode } from "react-icons/fa";
