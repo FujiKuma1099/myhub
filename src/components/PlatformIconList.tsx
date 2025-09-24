@@ -5,6 +5,11 @@ import { FaLaptopCode } from "react-icons/fa";
 import { FaXbox } from "react-icons/fa";
 import { FaPlaystation } from "react-icons/fa";
 import { BsNintendoSwitch } from "react-icons/bs";
+import { FaApple } from "react-icons/fa";
+import { FaLinux } from "react-icons/fa";
+import { MdPhoneIphone } from "react-icons/md";
+import { BsGlobe } from "react-icons/bs";
+import { FaAndroid } from "react-icons/fa";
 
 interface Props {
   platforms: Platform[];
@@ -12,11 +17,16 @@ interface Props {
 
 const PlatformIconList = ({ platforms }: Props) => {
     const iconMap: { [key: string]: IconType } = {
-        pc: FaLaptopCode,
-        xbox: FaXbox,
-        playstation: FaPlaystation,
-        nintendo: BsNintendoSwitch,
-    }
+      pc: FaLaptopCode,
+      xbox: FaXbox,
+      playstation: FaPlaystation,
+      nintendo: BsNintendoSwitch,
+      mac: FaApple,
+      linux: FaLinux,
+      ios: MdPhoneIphone,
+      web: BsGlobe,
+      android: FaAndroid,
+    };
   return (
     <HStack>
       {platforms.map((platform) => {
